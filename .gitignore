@@ -1,2 +1,5 @@
 *__pycache__
 .vscode
+/misc
+/results
+/tools
