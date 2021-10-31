@@ -10,7 +10,7 @@
  ┣ 📂misc<br>
  ┃ ┣ evaluation.py --> plot functions for tracking visualization and RMSE calculation<br>
  ┃ ┣ helpers.py --> misc. helper functions, e.g. for loading / saving binary files<br>
- ┃ ┗ objdet_tools.py --> object detection functions without student tasks<br>
+ ┃ ┣ objdet_tools.py --> object detection functions without student tasks<br>
  ┃ ┗ params.py --> parameter file for the tracking part<br>
  ┃ <br>
  ┣ 📂results --> binary files with pre-computed intermediate results (empty to start)<br>
