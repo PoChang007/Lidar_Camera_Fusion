@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-In this project, we focus on multi-object trackings in real-world scenarios. Instead of only relying on the lidar sensor, the detections recognized by lidar and color camera sensors are combined for our 3D object trackings. This is an extension from [3D object detection project](./project_writeup_midterm.md).
+In this project, we focus on multi-object trackings in real-world scenarios. Instead of only relying on the lidar sensor, object positions recognized by lidar and color camera sensors are combined for our 3D object trackings. This is an extension from [3D object detection project](./project_writeup_midterm.md).
 
 ## Short recap of the four tracking steps 
 
