@@ -45,11 +45,11 @@ The fusion of Lidar and Color camera sensors for predicting object motions is im
 
 ### Difficult parts in the project
 
-The track/measurement association part was not trivial to complete. The closest track/measurement pair relies on the `Mahalanobis Distance` calculation with appropriate `Gating` threshold. However, to get globally optimal results, the Single Nearest Neighbor Association method may not be sufficient. Anther part that needs to be aware of is the removal of associated pair from unassigned track/measurement lists. The edge case such as min. entry in association matrix needs to be taken into account. Also, the update of the association matrix and the unassigned lists is crucial when a track/measurement pair is found.
+The track/measurement association part was not trivial to complete. The closest track/measurement pair relies on the `Mahalanobis Distance` calculation with appropriate `Gating` threshold. However, to get globally optimal results, the Single Nearest Neighbor Association method may not be sufficient. Another part that needs to be aware of is the removal of associated pair from unassigned track/measurement lists. The edge case such as min. entry in association matrix needs to be taken into account. Also, the update of the association matrix and the unassigned lists is crucial when a track/measurement pair is found.
 
 ## Benefits in camera-lidar fusion compared to lidar-only tracking  
 
-By adding the second sensor color camera, the object detection can be strengthen thanks to the RGB information, which compensates the shortage part from lidar sensor. The high resolution image provided by the color camera sensor, as well as the capability of seeing objects really far way can help improve trackings.
+By adding the second sensor color camera, the object detection can be strengthen thanks to the RGB information, which compensates the shortage part from lidar sensor. The high resolution image provided by the color camera sensor, as well as the capability of seeing objects really far away can help improve trackings.
 
 ## Challenges for sensor fusion system in real-life scenarios
 
