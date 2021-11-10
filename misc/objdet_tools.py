@@ -350,10 +350,10 @@ def extract_front_camera_image(frame):
     image = waymo_utils.decode_image(camera)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
-    dim = (int(image.shape[1] * 0.5), int(image.shape[0] * 0.5))
-    resized = cv2.resize(image, dim)
-    cv2.imshow("RGB Image. Press ESC button to exit", resized)
-    cv2.waitKey(0)
+    # dim = (int(image.shape[1] * 0.5), int(image.shape[0] * 0.5))
+    # resized = cv2.resize(image, dim)
+    # cv2.imshow("RGB Image. Press ESC button to exit", resized)
+    # cv2.waitKey(0)
 
     return image
 

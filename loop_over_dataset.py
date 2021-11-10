@@ -56,7 +56,7 @@ data_filename = 'training_segment-1005081002024129653_5313_150_5333_150_with_cam
 # data_filename = 'training_segment-10963653239323173269_1924_000_1944_000_with_camera_labels.tfrecord' # Sequence 3
 
 # show only frames in interval for debugging
-show_only_frames = [50, 51]
+show_only_frames = [0, 200]
 
 ## Prepare Waymo Open Dataset file for loading
 # adjustable path in case this script is called from another working directory
@@ -76,7 +76,9 @@ model_det = det.create_model(configs_det)
 configs_det.use_labels_as_objects = False
 
 ## Uncomment this setting to restrict the y-range in the final project
-# configs_det.lim_y = [-25, 25]
+# configs_det.lim_y = [-5, 10]
+# configs_det.lim_y = [-5, 15]
+configs_det.lim_y = [-25, 25]
 
 ## Initialize tracking
 KF = Filter()  # set up Kalman filter
@@ -88,11 +90,11 @@ np.random.seed(10)  # make random values predictable
 
 ## Selective execution and visualization
 # options are 'bev_from_pcl', 'detect_objects', 'validate_object_labels', 'measure_detection_performance'; options not in the list will be loaded from file
-exec_detection = ['pcl_from_rangeimage', 'bev_from_pcl', 'detect_objects', 'validate_object_labels']
+exec_detection = ['validate_object_labels']
 # options are 'perform_tracking'
-exec_tracking = []
+exec_tracking = ['perform_tracking']
 # options are 'show_range_image', 'show_bev', 'show_pcl', 'show_labels_in_image', 'show_objects_and_labels_in_bev', 'show_objects_in_bev_labels_in_camera', 'show_tracks', 'show_detection_performance', 'make_tracking_movie'
-exec_visualization = ['show_objects_in_bev_labels_in_camera']
+exec_visualization = ['show_tracks', 'make_tracking_movie']
 exec_list = make_exec_list(exec_detection, exec_tracking, exec_visualization)
 # set pause time between frames in ms (0 = stop between frames until key is pressed)
 vis_pause_time = 0
@@ -157,11 +159,11 @@ while True:
             if 'detect_objects' in exec_list:
                 print('detecting objects in lidar pointcloud')
                 detections = det.detect_objects(lidar_bev, model_det, configs_det)
-            # else:
-            #     print('loading detected objects from result file')
-            #     # load different data for final project vs. mid-term project
-            #     if 'perform_tracking' in exec_list:
-            #         detections = load_object_from_file(results_fullpath, data_filename, 'detections', cnt_frame)
+            else:
+                print('loading detected objects from result file')
+                # load different data for final project vs. mid-term project
+                if 'perform_tracking' in exec_list:
+                    detections = load_object_from_file(results_fullpath, data_filename, 'detections', cnt_frame)
             #     else:
             #         detections = load_object_from_file(results_fullpath, data_filename, 'detections_' + configs_det.arch + '_' + str(configs_det.conf_thresh), cnt_frame)
 
