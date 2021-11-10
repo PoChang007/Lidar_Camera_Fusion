@@ -1,6 +1,7 @@
 # SDCND : Sensor Fusion and Tracking
 
 ## [Project Writeup: 3D Object Detection](project_writeup_midterm.md)
+## [Project Writeup: Track 3D-Objects Over Time](project_writeup_final.md)
 
 ## Project File Structure
 
@@ -65,6 +66,7 @@ The following setup in the local machine can run the program successfully:
 * Ubuntu 20.04
 * Python 3.8.10
 * PyTorch 1.9.1+cu111
+* Open3D 0.13.0
 
 ### Package Requirements
 
