@@ -1,8 +1,8 @@
 # 3D Object Detection
 
-| Objects in color camera image | 3D object detection in birds-eye view |
-|:-----------------------------------:|:-------------------------------------:|
-|<img src="docs/color_camera_scene.png" width="400" height ="350"> | <img src="docs/bev_detection.png" width="400" height="350"> |
+| 2D color image                      | Lidar 3D point clouds                 | 3D object detection in birds-eye view |
+|:-----------------------------------:|:-------------------------------------:|:-------------------------------------:|
+|<img src="docs/color_camera_scene.png" width="350" height ="350"> | <img src="docs/3d_point_cloud.png" width="350" height="350"> | <img src="docs/bev_detection.png" width="350" height="350"> |
 
 ## Project overview
 
