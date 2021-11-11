@@ -1,5 +1,9 @@
 # 3D Object Detection
 
+| Objects in color camera image | 3D object detection in birds-eye view |
+|:-----------------------------------:|:-------------------------------------:|
+|<img src="docs/color_camera_scene.png" width="400" height ="350"> | <img src="docs/bev_detection.png" width="400" height="350"> |
+
 ## Project overview
 
 With the increase needs of the object detection accuracy for self-driving techniques, the detection system equipped with LiDAR sensors helps the self-driving car perceive the 3D world to have better understandings of its surroundings. For this project, a deep-learning approach is used to detect vehicles in LiDAR data ([Waymo Open dataset](https://waymo.com/open/)) based on a birds-eye view perspective of the 3D point-cloud. Detection performances such as Precision and Recall by comparing the ground truth labels with detection results are also evaluated. The steps of accomplishing 3D object detection are described below.
@@ -65,9 +69,9 @@ Aside from utilizing `Darknet` model for objection detection, here we add a seco
 
 #### 2. Extract 3D bounding boxes from model response
 
-After we obtain the detected object's information associated with the BEV map, we convert them into metric coordinates in vehicle space. The converted result is denoted as `[c, x, y, z, h, w, l, yaw]`, where `c` represents the object class, `x, y, z` represents the object position, `h, w, l` represents the bounding box size, and `yaw` represents the bounding box's yaw angle. The projected bounding box in the image space along with the corresponding bounding box in BEV map can be visualized:
+After we obtain the detected object's information associated with the BEV map, we convert them into metric coordinates in vehicle space. The converted result is denoted as `[c, x, y, z, h, w, l, yaw]`, where `c` represents the object class, `x, y, z` represents the object position, `h, w, l` represents the bounding box size, and `yaw` represents the bounding box's yaw angle. The ground-truth labels in 2D color image versus the detected bounding boxes in BEV map can be visualized:
 
-<img src="docs/bbox_visualization.png" width="400" height="600">
+<img src="docs/3d_object_detection.gif" width="400" height="600">
 <hr>
 
 ### Performance Evaluation for Object Detection
