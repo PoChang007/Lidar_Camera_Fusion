@@ -45,7 +45,7 @@ The fusion of Lidar and Color camera sensors for predicting object motions is im
 
 ### Difficult parts in the project
 
-The track/measurement association part was not trivial to complete. The closest track/measurement pair relies on the `Mahalanobis Distance` calculation with appropriate `Gating` threshold. However, to get globally optimal results, the Single Nearest Neighbor Association method may not be sufficient. Another part that needs to be aware of is the removal of associated pair from unassigned track/measurement lists. The edge case such as min. entry in association matrix needs to be taken into account. Also, the update of the association matrix and the unassigned lists is crucial when a track/measurement pair is found.
+The track/measurement association part was not trivial to complete. The closest track/measurement pair relies on the `Mahalanobis Distance` calculation with appropriate `Gating` threshold. However, to get globally optimal results, the Single Nearest Neighbor Association method may not be sufficient. Another part that needs to be aware of is the associated pair removal from unassigned track/measurement lists. By iteratively searching and deleting the closest pair in association matrix, all the eligible tracks can then be updated.
 
 ## Benefits in camera-lidar fusion compared to lidar-only tracking  
 
@@ -53,7 +53,7 @@ By adding the second sensor color camera, the object detection can be strengthen
 
 ## Challenges for sensor fusion system in real-life scenarios
 
-Since each sensor type may have a different field of view, one concern is that how to deal with occlusion areas that some of sensors cannot capture while maintaining high accuracy for object detection. While fully covering the area of an ego car's surroundings may improve the detection, the calibration of heterogeneous sensors is still challenging.
+Since each sensor type may have a different field of view, one concern is that how to deal with invisible/occlusion areas that some of sensors cannot capture while maintaining high accuracy for object detection. While fully covering the area of an ego car's surroundings may improve the detection, the calibration of heterogeneous sensors is still challenging.
 
 ## Possible improvements for current tracking results
 
