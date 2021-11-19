@@ -19,7 +19,7 @@ The first step is to get range images from Waymo dataset. The range and intensit
 
 #### 2. Visualize lidar point-cloud (`show_pcl` func. in [objdet_pcl.py](./student/objdet_pcl.py))
 
-The range image can be converted into lidar point-cloud by spherical coordinates. The lidar point-cloud is fed into Open3D library's visualizer function for the visualization. 10 random images of with varying degrees of visibility are taken:
+The range image can be converted into lidar point-cloud by spherical coordinates. The lidar point-cloud is fed into Open3D library's visualizer function for the visualization. 10 random images with varying degrees of visibility are taken:
 
 | | |
 |:---------------:|:---------------:|
