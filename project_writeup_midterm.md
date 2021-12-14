@@ -76,7 +76,7 @@ After we obtain the detected object's information associated with the BEV map, w
 
 ### Performance Evaluation for Object Detection
 
-#### 1. Compute intersection-over-union between labels and detections (`measure_detection_performance` func. in [objdet_pcl.py](./student/objdet_eval.py))
+#### 1. Compute intersection-over-union between labels and detections (`measure_detection_performance` func. in [objdet_eval.py](./student/objdet_eval.py))
 
 To evaluate the performance of Object Detection, we compute the geometrical bounding box overlap between ground-truth labels and detected objects. The min. IOU is set to 0.5. The object corners can be obtained based on `x, y, w, l, yaw`. We take the advantage of `Shapely` toolbox to generate polygons from the four corners of the current label/detected bounding boxes. Then the intersection over union (IOU) between label and detected bounding box can be computed. In case of multiple matches, only the object/label pair with max. IOU is kept, and the true positives count is accumulated if the IOU value of a object/label is greater than min. IOU threshold. The data structures `ious` and `center_devs` showed the following contents:
 
@@ -86,11 +86,11 @@ To evaluate the performance of Object Detection, we compute the geometrical boun
 <img src="docs/center_devs_value.png" width="400">
 <hr>
 
-#### 2. Compute false-negatives and false-positives (`measure_detection_performance` func. in [objdet_pcl.py](./student/objdet_eval.py))
+#### 2. Compute false-negatives and false-positives (`measure_detection_performance` func. in [objdet_eval.py](./student/objdet_eval.py))
 
 The total number of positives present in the scene is the number of valid labels within the defined area. The false-negatives, which is the number of undetected objects, is all-positive count minus true-positive count. The false-positives, which represents the number of incorrect object predictions, is detection count minus true-positive count.
 
-#### 3. Compute precision and recall (`compute_performance_stats` func. in [objdet_pcl.py](./student/objdet_pcl.py))
+#### 3. Compute precision and recall (`compute_performance_stats` func. in [objdet_eval.py](./student/objdet_eval.py))
 
 We compute `precision` and `recall` by processing around 100 frames in a image sequence. The `precision` is 0.9438, and the `recall` is 0.8235. The performance measures are plotted below:
 
